@@ -1,0 +1,10 @@
+/home/asus/Documents/Workspace/C-sharp-begginer/obj/Debug/netcoreapp2.0/C-sharp-begginer.csproj.CoreCompileInputs.cache
+/home/asus/Documents/Workspace/C-sharp-begginer/obj/Debug/netcoreapp2.0/C-sharp-begginer.AssemblyInfoInputs.cache
+/home/asus/Documents/Workspace/C-sharp-begginer/obj/Debug/netcoreapp2.0/C-sharp-begginer.AssemblyInfo.cs
+/home/asus/Documents/Workspace/C-sharp-begginer/bin/Debug/netcoreapp2.0/C-sharp-begginer.deps.json
+/home/asus/Documents/Workspace/C-sharp-begginer/bin/Debug/netcoreapp2.0/C-sharp-begginer.runtimeconfig.json
+/home/asus/Documents/Workspace/C-sharp-begginer/bin/Debug/netcoreapp2.0/C-sharp-begginer.runtimeconfig.dev.json
+/home/asus/Documents/Workspace/C-sharp-begginer/bin/Debug/netcoreapp2.0/C-sharp-begginer.dll
+/home/asus/Documents/Workspace/C-sharp-begginer/bin/Debug/netcoreapp2.0/C-sharp-begginer.pdb
+/home/asus/Documents/Workspace/C-sharp-begginer/obj/Debug/netcoreapp2.0/C-sharp-begginer.dll
+/home/asus/Documents/Workspace/C-sharp-begginer/obj/Debug/netcoreapp2.0/C-sharp-begginer.pdb
