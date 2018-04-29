@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace C_sharp_begginer
 {
@@ -151,7 +153,132 @@ namespace C_sharp_begginer
                 System.Console.WriteLine(maximum);
             }
 
+        
         }
+         public class ArraysAndLists {
+
+            // 1- When you post a message on Facebook, depending on the number of people who like your post, Facebook displays different information.
+
+            //     If no one likes your post, it doesn't display anything.
+            //     If only one person likes your post, it displays: [Friend's Name] likes your post.
+            //     If two people like your post, it displays: [Friend 1] and [Friend 2] like your post.
+            //     If more than two people like your post, it displays: [Friend 1], [Friend 2] and [Number of Other People] others like your post.displays: [Friend 1], [Friend 2] and [Number of Other People] others like your post.
+
+            // Write a program and continuously ask the user to enter different names, until the user presses Enter (without supplying a name). Depending on the number of names provided, display a message based on the above pattern.
+             public static void ExcerciseOne(){
+                 var names = new List<string>();
+                 while (true)
+                 {
+                     System.Console.WriteLine("Please enter a name or press Enter to finish");
+                     var input = Console.ReadLine();
+                     if (String.IsNullOrWhiteSpace(input))
+                     {
+                        break; 
+                     } else
+                     {
+                        names.Add(input);
+                     }
+                 }
+
+                 // if/else probably a better way to go
+                 switch (names.Count)
+                 {
+                     case 0: System.Console.WriteLine();     
+                     break;                
+                     case 1: System.Console.WriteLine("{0} likes your post", names[0]);
+                     break;
+                     case 2: System.Console.WriteLine("{0} and {1} like your post", names[0], names[1]);
+                     break;
+                     default: System.Console.WriteLine("{0}, {1} and {2} others like your post", names[0], names[1], names.Count-2);
+                     break;
+                 }
+             }
+
+            //  2- Write a program and ask the user to enter their name. Use an array to reverse the name and then store the result in a new string. Display the reversed name on the console.
+             public static void ExcerciseTwo(){
+                 System.Console.WriteLine("Please enter your name");
+                 var input = Console.ReadLine();
+                 var nameArray = new char[input.Length];
+                  for (int i = nameArray.Length; i > 0; i--)
+                  {
+                      nameArray[nameArray.Length - i] = input[i - 1];
+                  }
+                  
+                var reversed = new string(nameArray); 
+                Console.WriteLine("Reversed name: " + reversed);
+             }
+
+            //  3- Write a program and ask the user to enter 5 numbers. If a number has been previously entered, display an error message and ask the user to re-try. Once the user successfully enters 5 unique numbers, sort them and display the result on the console.
+             public static void ExcerciseThree(){             
+                 var numbers = new List<int>();
+                 var count = 0;
+                 while(count < 5)
+                 {
+                     System.Console.WriteLine("Please enter five unique numbers, one at a time");
+                     var input = Convert.ToInt32(Console.ReadLine());   
+                    if (numbers.Contains(input))
+                    {
+                        System.Console.WriteLine("Please enter a unique number");
+                        continue;
+                    } else
+                    {
+                        numbers.Add(input);
+                        count ++;
+                    }
+                      
+                 }
+                 numbers.Sort();
+                System.Console.WriteLine(numbers);
+             }
+
+             // 4- Write a program and ask the user to continuously enter a number or type "Quit" to exit. The list of numbers may include duplicates. Display the unique numbers that the user has entered.
+             public static void ExcerciseFour(){
+                 var numbers = new List<int>();
+                  while (true)
+                  {
+                    System.Console.WriteLine("Please enter a number or type Quit to exit");
+                    var input = Console.ReadLine();     
+                    if (input.ToLower() == "quit")
+                    {
+                        break;
+                    } else
+                    {
+                        var number = Convert.ToInt32(input);
+                        numbers.Add(number);
+                    }                 
+                  }  
+                    var uniqueNumbers = new List<int>();
+                    foreach (var number in numbers)
+                    {
+                        if (!uniqueNumbers.Contains(number))
+                        {
+                            uniqueNumbers.Add(number);
+                        }
+                    }
+                    System.Console.WriteLine(uniqueNumbers);
+             }
+             
+             // 5- Write a program and ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10). If the list is empty or includes less than 5 numbers, display "Invalid List" and ask the user to re-try; otherwise, display the 3 smallest numbers in the list. 
+             public static void ExcerciseFive(){
+                 var numbers = new List<int>();
+                 System.Console.WriteLine("Please enter a list of comma separated numbers (e.g 5, 1, 9, 2, 10).");
+                 var input = Console.ReadLine();
+                 var inputArr = input.Split(",");
+
+                 if (inputArr.Length < 5)
+                 {
+                     System.Console.WriteLine("Invalid List, please try again");
+                 }
+                 else {
+                     foreach (var number in inputArr)
+                {
+                    numbers.Add(Convert.ToInt32(number));
+                }
+                numbers.Sort();
+                System.Console.WriteLine("{0}, {1} and {3} are the smallest numbers of the list", numbers[0], numbers[1], numbers[2]);
+                 }       
+             }
+         }
         static void Main(string[] args)
         {
             Conditionals.ExcerciseOne();
